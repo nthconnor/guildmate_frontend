@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 function HeroSection() {
   return (
-    <div className="flex bg-white shadow-md w-full mt-0">
+    <div className="flex bg-white shadow-sm w-full mt-10">
       <div className="rounded-lg p-2 mx-auto max-w-xl w-full">
         <h2 className="text-2xl text-center mb-4">
           <span className="mx-2">Connect.</span>

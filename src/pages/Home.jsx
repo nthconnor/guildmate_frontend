@@ -1,5 +1,6 @@
 import Nav from "../components/Nav"
 import HeroSection from "../components/HeroSection";
+import Features from "../components/FeaturesSection";
 import '../index.css'
 
 function Home () {
@@ -7,6 +8,7 @@ function Home () {
         <div>
             <Nav />
             <HeroSection />
+            <Features />
         </div>
     );
 }
