@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
-import './index.css'
+import Nav from "../components/Nav"
+import '../index.css'
 
 function Home () {
     return (
         <div>
-            <Button>test</Button>
+            <Nav />
         </div>
     );
 }
