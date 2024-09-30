@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { Button } from "@/components/ui/button";
+import { Button } from "./ui/button";
 import "../index.css";
 
 function Nav() {
@@ -8,7 +8,7 @@ function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-10 bg-neutral-50 text-black shadow-md">
       <div className="container mx-auto flex items-center p-2 relative">
         <div className="absolute left-0 flex items-center">
-          <img src="/guildmate.svg" alt="Logo" className="h-8 w-auto" />
+          <img src="/guildmate.svg" alt="Logo" className="h-5 w-auto" />
           <div className="text-xl font-bold ml-2">GUILDMATE</div>
         </div>
         <div className="flex-grow flex justify-center">
@@ -26,8 +26,9 @@ function Nav() {
             </NavLink>
           </div>
         </div>
-        <div className="flex-none">
+        <div className="flex-none absolute right-0">
           <Button variant="ghost">Login</Button>
+          <Button variant="ghost">Sign up</Button>
         </div>
       </div>
     </nav>
