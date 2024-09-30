@@ -1,7 +1,10 @@
+import { Button } from "@/components/ui/button";
+import './index.css'
+
 function Home () {
     return (
         <div>
-            home
+            <Button>test</Button>
         </div>
     );
 }
