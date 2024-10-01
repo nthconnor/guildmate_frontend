@@ -1,15 +1,30 @@
-import { useState } from 'react'
-import './App.css'
-import Home from './pages/Home'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Nav from "./components/Nav";
+import LoginForm from "./components/LoginForm";
+import SignupForm from "./components/SignupForm";
+import Dashboard from "./pages/Dashboard";
+import ProtectedRoute from "./components/ProtectedRoute";
+import About from "./pages/About";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div>
-      <Home />
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />}/>
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/signup" element={<SignupForm />} />
+        <Route
+          path="/dashboard/*"
+          element={<ProtectedRoute element={<Dashboard />} />}
+        />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

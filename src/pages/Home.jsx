@@ -1,7 +1,14 @@
-function Home (props) {
+import Nav from "../components/Nav"
+import HeroSection from "../components/HeroSection";
+import Features from "../components/FeaturesSection";
+import '../index.css'
+
+function Home () {
     return (
         <div>
-            home
+            <Nav />
+            <HeroSection />
+            <Features />
         </div>
     );
 }
