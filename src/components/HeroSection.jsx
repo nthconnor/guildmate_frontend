@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 
 function HeroSection() {
@@ -17,8 +18,12 @@ function HeroSection() {
           together.
         </p>
         <div className="flex justify-center mt-4 space-x-4">
-          <Button>Login</Button>
-          <Button variant="outline">Create Account</Button>
+          <Link to="/login">
+            <Button>Login</Button>
+          </Link>
+          <Link to="/signup">
+            <Button variant="outline">Create Account</Button>
+          </Link>
         </div>
       </div>
       <div className="flex justify-center mt-4 w-full">

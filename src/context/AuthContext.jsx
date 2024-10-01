@@ -7,18 +7,29 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const login = async (username, password) => {
-    const response = await axios.post("auth/login", { username, password });
+    const response = await axios.post("/auth/login", { username, password });
     setUser(response.data);
   };
 
-  const signup = async (username, password) => {
-    const response = await axios.post("auth/signup", { username, password });
-    setUser(response.data);
+  const signup = async (username, password, displayName) => {
+    try {
+      const response = await axios.post("/auth/signup", {
+        displayName,
+        username,
+        password,
+        confirmPassword: password,
+      });
+      setUser(response.data);
+    } catch (error) {
+      console.error("Signup Error:", error.response?.data || error.message);
+      throw error;
+    }
   };
+  
 
   const logout = async () => {
     try {
-      await axios.post("auth/logout");
+      await axios.post("/auth/logout");
       setUser(null);
     } catch (error) {
       console.error("Logout error:", error);

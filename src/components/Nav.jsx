@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import { Button } from "./ui/button";
 import "../index.css";
@@ -8,12 +9,16 @@ function Nav() {
     <nav className="fixed top-0 left-0 right-0 z-10 bg-neutral-50 text-black shadow-md">
       <div className="container mx-auto flex items-center p-2 relative">
         <div className="absolute left-0 flex items-center">
-          <img src="/guildmate.svg" alt="Logo" className="h-5 w-auto" />
-          <div className="text-xl font-bold ml-2">GUILDMATE</div>
+          <Link to="/">
+            <img src="/guildmate.svg" alt="Logo" className="h-5 w-auto" />
+          </Link>
+          <div className="text-xl font-bold ml-2">
+            <Link to="/">GUILDMATE</Link>
+          </div>
         </div>
         <div className="flex-grow flex justify-center">
           <div className="flex space-x-10">
-            <NavLink to="/" exact className="hover:text-gray-300">
+            <NavLink to="/" className="hover:text-gray-300">
               Dashboard
             </NavLink>
             <span className="text-gray-400">|</span>
@@ -27,8 +32,12 @@ function Nav() {
           </div>
         </div>
         <div className="flex-none absolute right-0">
-          <Button variant="ghost">Login</Button>
-          <Button variant="ghost">Sign up</Button>
+          <Link to="/login">
+            <Button variant="ghost">Login</Button>
+          </Link>
+          <Link to="/signup">
+            <Button variant="ghost">Sign Up</Button>
+          </Link>
         </div>
       </div>
     </nav>
