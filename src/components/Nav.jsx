@@ -43,7 +43,7 @@ function Nav() {
             </NavLink>
           </div>
         </div>
-        <div className="flex-none absolute right-0">
+        <div className="flex-none absolute right-0 flex items-center">
           {user ? (
             <DropdownMenu>
               <DropdownMenuTrigger>
@@ -57,7 +57,7 @@ function Nav() {
                 <DropdownMenuLabel>{user.username}</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => console.log("Profile")}>
-                <User className="mr-2 h-4 w-4" />
+                  <User className="mr-2 h-4 w-4" />
                   Profile
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
