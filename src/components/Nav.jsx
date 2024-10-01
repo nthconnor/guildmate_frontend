@@ -29,18 +29,32 @@ function Nav() {
           </div>
         </div>
         <div className="flex-grow flex justify-center">
-          <div className="flex space-x-10">
-            <NavLink to="/" className="hover:text-gray-300">
-              Dashboard
-            </NavLink>
-            <span className="text-gray-400">|</span>
-            <NavLink to="/" className="hover:text-gray-300">
-              Discover
-            </NavLink>
-            <span className="text-gray-400">|</span>
-            <NavLink to="/" className="hover:text-gray-300">
-              Create
-            </NavLink>
+          <div className="flex space-x-5 font-bold text-sm">
+            {user ? (
+              <>
+                <NavLink to="/dashboard" className="hover:text-gray-300">
+                  Dashboard
+                </NavLink>
+                <span className="text-gray-400">|</span>
+                <NavLink to="/discover" className="hover:text-gray-300">
+                  Discover
+                </NavLink>
+                <span className="text-gray-400">|</span>
+                <NavLink to="/create" className="hover:text-gray-300">
+                  Create
+                </NavLink>
+              </>
+            ) : (
+              <>
+                <NavLink to="/about" className="hover:text-gray-300">
+                  ABOUT
+                </NavLink>
+                <span className="text-gray-400">|</span>
+                <NavLink to="/contact" className="hover:text-gray-300">
+                  CONTACT
+                </NavLink>
+              </>
+            )}
           </div>
         </div>
         <div className="flex-none absolute right-0 flex items-center">
@@ -50,7 +64,7 @@ function Nav() {
                 <img
                   src={user.avatar}
                   alt="Avatar"
-                  className="h-8 w-8 rounded-full cursor-pointer"
+                  className="h-7 w-7 rounded-full cursor-pointer"
                 />
               </DropdownMenuTrigger>
               <DropdownMenuContent>
@@ -69,11 +83,11 @@ function Nav() {
             </DropdownMenu>
           ) : (
             <>
-              <Link to="/login">
-                <Button variant="ghost">Login</Button>
+              <Link to="/login" className="text-xs font-bold mx-2" >
+                LOGIN
               </Link>
-              <Link to="/signup">
-                <Button variant="ghost">Sign Up</Button>
+              <Link to="/signup" className="text-xs font-bold mx-2">
+                SIGN UP
               </Link>
             </>
           )}
