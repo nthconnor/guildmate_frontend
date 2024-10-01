@@ -3,9 +3,9 @@ import { Separator } from "./ui/separator";
 
 function Features() {
   return (
-    <div className="flex bg-white shadow-md w-full mt-10">
+    <div className="flex bg-white shadow-md w-full mt-5">
       <div className="rounded-lg p-4 mx-auto max-w-xl w-full">
-        <h2 className="text-2xl text-center font-bold mb-4">
+        <h2 className="text-2xl text-center font-bold mb-2">
           SHAPE YOUR LEGACY
         </h2>
         <p className="text-center mt-2 text-gray-600 mb-5">
@@ -14,7 +14,7 @@ function Features() {
           gaming experience and connect you with players who share your passion.
         </p>
         <Separator />
-        <div className="mt-5 mb-7 flex justify-between w-full p-2">
+        <div className="mt-5 mb-7 flex justify-between w-full p-1">
           <div className="flex-1 text-center mx-5">
             <h3 className="font-bold mb-2">EXPLORE</h3>
             <div className="flex justify-center mb-2">
