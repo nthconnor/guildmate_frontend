@@ -16,7 +16,7 @@ const LoginForm = () => {
     e.preventDefault();
     try {
       await login(username, password);
-      navigate("/")
+      navigate("/dashboard")
     } catch (err) {
       setError("Invalid username or password");
     }

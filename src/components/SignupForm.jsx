@@ -23,7 +23,7 @@ const SignupForm = () => {
 
     try {
       await signup(username, password, username);
-      navigate("/")
+      navigate("/dashboard")
     } catch (err) {
       setError("Signup failed. Please try again.");
     }
