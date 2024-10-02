@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Nav from "./components/Nav";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
+import CreateGuild from "./components/CreateGuild";
 import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import About from "./pages/About";
@@ -21,6 +22,10 @@ function App() {
         <Route
           path="/dashboard/*"
           element={<ProtectedRoute element={<Dashboard />} />}
+        />
+        <Route
+          path="/create"
+          element={<ProtectedRoute element={<CreateGuild />} />}
         />
       </Routes>
     </div>
