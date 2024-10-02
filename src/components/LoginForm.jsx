@@ -1,16 +1,19 @@
 import React, { useState } from "react";
-import { useAuth } from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+
+import useLogin from "../hooks/useLogin";
 
 const LoginForm = () => {
-  const { login } = useAuth();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
+
+  const { loading, login } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,9 +32,9 @@ const LoginForm = () => {
         <div className="mb-4">
           <Input
             type="text"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
             required
             className="border border-gray-300 rounded p-2 w-full"
           />
@@ -39,9 +42,9 @@ const LoginForm = () => {
         <div className="mb-4">
           <Input
             type="password"
+            placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="Password"
             required
             className="border border-gray-300 rounded p-2 w-full"
           />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { useAuth } from "../context/AuthContext";
+import { LogOut, User } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -10,11 +10,15 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
 } from "./ui/dropdown-menu";
-import { LogOut, User } from "lucide-react";
+
+import useLogout from "..//hooks/useLogout";
+import { useAuth } from "../context/AuthContext";
+
 import "../index.css";
 
 function Nav() {
-  const { user, logout } = useAuth();
+  const { loading, logout } = useLogout();
+  const { user } = useAuth();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-10 bg-neutral-50 text-black shadow-md">

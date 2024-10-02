@@ -6,22 +6,26 @@ const useLogin = () => {
   const { setUser } = useAuth();
 
   const login = async (username, password) => {
+    setLoading(true);
     try {
       const res = await fetch("http://localhost:3000/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
+        credentials: 'include',
       });
 
-      const data = await res.json();
-      if (data.error) {
-        throw new Error(data.error);
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || "Login failed");
       }
 
+      const data = await res.json();
       localStorage.setItem("user", JSON.stringify(data));
       setUser(data);
     } catch (error) {
-      console.error(error);
+      console.error("Login error:", error);
+      throw error;
     } finally {
       setLoading(false);
     }
