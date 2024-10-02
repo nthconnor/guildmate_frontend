@@ -25,6 +25,7 @@ const useSignup = () => {
           confirmPassword,
           avatar,
         }),
+        credentials: 'include',
       });
 
       const data = await res.json();
