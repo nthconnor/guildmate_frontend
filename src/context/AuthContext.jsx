@@ -2,12 +2,12 @@ import React, { createContext, useContext, useState} from "react";
 
 const AuthContext = createContext();
 
-export const useAuthContext = () => {
+export const useAuth = () => {
   return useContext(AuthContext);
 }
 
 export const AuthProvider = ({ children }) => {
-  const [authUser, setAuthUser] = useState(JSON.parse(localStorage.getItem("activeUser")) || null);
-  return <AuthProvider value={{ authUser, setAuthUser }}>{ children }</AuthProvider>
+  const [user, setUser] = useState(JSON.parse(localStorage.getItem("user")) || null);
+  return <AuthProvider value={{ user, setUser }}>{ children }</AuthProvider>
 
 }
