@@ -6,7 +6,7 @@ const useCreateGuild = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const createGuild = async (name, description = "", tags = []) => {
+  const createGuild = async (name, description = "", logo = "", tags = []) => {
     setLoading(true);
     setError(null);
 
@@ -18,7 +18,7 @@ const useCreateGuild = () => {
           Authorization: `Bearer ${token}`,
         },
         credentials: "include",
-        body: JSON.stringify({ name, description, tags }),
+        body: JSON.stringify({ name, description, logo, tags }),
       });
 
       if (!response.ok) {

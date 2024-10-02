@@ -10,13 +10,14 @@ const CreateGuild = () => {
     name: '',
     description: '',
     tags: '',
+    logo: '',
   });
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    const { name, description, tags } = inputs;
+    const { name, description, tags, logo } = inputs;
 
     if (!name) {
       alert("Enter a name");
@@ -25,11 +26,10 @@ const CreateGuild = () => {
 
     const tagsArray = tags.split(',').map(tag => tag.trim());
 
-    const guild = await createGuild(name, description, tagsArray);
+    const guild = await createGuild(name, description, logo, tagsArray,);
     
     if (guild) {
       console.log('Guild created:', guild);
-    //   navigate(`/guild/${guild._id}`);
       navigate(`/dashboard`);
     }
   };
@@ -54,6 +54,14 @@ const CreateGuild = () => {
             placeholder="Description (optional)"
             value={inputs.description}
             onChange={(e) => setInputs({ ...inputs, description: e.target.value })}
+          />
+        </div>
+        <div className="mb-4">
+          <Input
+            type="text"
+            placeholder="Logo URL"
+            value={inputs.logo}
+            onChange={(e) => setInputs({ ...inputs, logo: e.target.value })}
           />
         </div>
         <div className="mb-4">
