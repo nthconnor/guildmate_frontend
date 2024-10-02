@@ -1,14 +1,15 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
 import Nav from "./components/Nav";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Guild from "./pages/Guild"
+import Dashboard from "./pages/Dashboard";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import CreateGuild from "./components/CreateGuild";
-import Dashboard from "./pages/Dashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
-import About from "./pages/About";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           path="/create"
           element={<ProtectedRoute element={<CreateGuild />} />}
         />
+        <Route path="/guilds/:id" element={<Guild />} />
       </Routes>
     </div>
   );
