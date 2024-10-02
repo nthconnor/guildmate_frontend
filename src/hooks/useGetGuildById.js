@@ -15,7 +15,7 @@ const useGetGuildById = (guildId) => {
 
         try {
           const res = await fetch(
-            `http://localhost:3000/api/guilds/${guildId}`,
+            `https://guildmateapi.onrender.com/api/guilds/${guildId}`,
             {
               headers: { Authorization: `Bearer ${token}` },
               credentials: "include",

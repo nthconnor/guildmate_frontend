@@ -11,15 +11,18 @@ const useCreateGuild = () => {
     setError(null);
 
     try {
-      const response = await fetch("http://localhost:3000/api/guilds/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        credentials: "include",
-        body: JSON.stringify({ name, description, logo, tags }),
-      });
+      const response = await fetch(
+        "https://guildmateapi.onrender.com/api/guilds/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: "include",
+          body: JSON.stringify({ name, description, logo, tags }),
+        }
+      );
 
       if (!response.ok) {
         const text = await response.text();

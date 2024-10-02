@@ -11,7 +11,7 @@ const useUpdateGuild = () => {
     setError(null);
 
     try {
-      const response = await fetch(`http://localhost:3000/api/guilds/${id}`, {
+      const response = await fetch(`https://guildmateapi.onrender.com/api/guilds/${id}`, {
         method: 'PUT',
         headers: {
           "Content-Type": "application/json",
