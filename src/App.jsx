@@ -9,6 +9,7 @@ import Dashboard from "./pages/Dashboard";
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import CreateGuild from "./components/CreateGuild";
+import UpdateGuild from "./components/UpdateGuild";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
@@ -29,6 +30,8 @@ function App() {
           element={<ProtectedRoute element={<CreateGuild />} />}
         />
         <Route path="/guilds/:id" element={<Guild />} />
+        <Route path="/guilds/:id/update" element={<UpdateGuild />} />
+
       </Routes>
     </div>
   );

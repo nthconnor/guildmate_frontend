@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useGetGuildById from '../hooks/useGetGuildById';
+import { Link } from "react-router-dom";
 
 const GuildShow = () => {
   const { id } = useParams();
@@ -35,6 +36,7 @@ const GuildShow = () => {
         <h2 className="text-2xl font-bold mb-4">{guild.name}</h2>
         <span className="font-semibold text-sm">Members - {guild.members.length}</span>
         <p>{guild.description}</p>
+        <Link to={`/guilds/${guild._id}/update`}>Edit Guild</Link> {/* use an icon maybe */}
       </div>
     </div>
   );
